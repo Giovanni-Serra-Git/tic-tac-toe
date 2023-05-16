@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="test.css">
+    <script src="test.js" defer></script>
+    <title>Tris</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <div data-winner>
+            </div>
+            <div class="options">
+                <button data-option="new_round">New Round</button>
+                <button data-option="new_game">New Game</button>
+            </div>
+        </div>
+    </div>
+    <div data-iconOverlay class="iconOverlay">
+        <div data-hamburgerMenu class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div data-closePanel class="closeSidePanel">X</div>
+    </div>
+    <div data-panel class="sidePanel" aria-expanded="false">
+        <div class="containerPlayers"> 
+            <div class="containerPlayer">
+                <div data-display-none class="player-one">
+                    <p data-namePlayerOne data-player class="namePlayer"></p>
+                </div>
+                <div class="scoreContainer">
+                    <p class="score">Score: </p><span data-score data-scorePlayerOne="">0</span>
+                </div>
+            </div>
+            <div class="containerPlayer">
+                <div data-display-none class="player-two">
+                    <p data-namePlayerTwo data-player class="namePlayer"></p>
+                </div>
+                <div class="scoreContainer">
+                    <p class="score">Score: </p><span data-score data-scorePlayerTwo="">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="round">
+            <p class="round">Round: </p><span data-round>0</span>
+        </div>
+    </div>
+    <div class="gameboard">
+        <div data-square data-index-spot="0" data-row="0"></div>
+        <div data-square data-index-spot="1" data-row="0"></div>
+        <div data-square data-index-spot="2" data-row="0"></div>
+        <div data-square data-index-spot="0" data-row="1"></div>
+        <div data-square data-index-spot="1" data-row="1"></div>
+        <div data-square data-index-spot="2" data-row="1"></div>
+        <div data-square data-index-spot="0" data-row="2"></div>
+        <div data-square data-index-spot="1" data-row="2"></div>
+        <div data-square data-index-spot="2" data-row="2"></div>
+    </div>
+    <div class="players">
+        <div class="playersName">
+            <div>
+                <h1>Player 1</h1>
+                <input data-player-one="1" id="player-one" type="text" placeholder="insert Name">
+            </div>
+            <img src="vs.jpg" alt="versus logo" class="versus">
+            <img data-play src="fight.jpg" alt="fight logo" class="fight">
+            <div>
+                <h1>Player 2</h1>
+                <input data-player-two="2" id="player-two" type="text" placeholder="insert Name">
+            </div>
+        </div>
+        <img data-play src="fight.jpg" alt="fight logo" class="fight">
+    </div>
+</body>
+</html>

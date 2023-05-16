@@ -1,0 +1,340 @@
+body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f8f8f8;
+	justify-content: center;
+}
+
+.sidePanel {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	border-right: 2px solid #ab0000;
+	width: 30vw;
+	transform: translateX(-100%);
+	transition: 500ms;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 10px;
+	background-color: #fff;
+}
+
+.containerPlayer {
+	border: 1px solid black;
+	border-bottom: none;
+	width: 60%;
+}
+
+.iconOverlay {
+	display: none;
+	top: 20px;
+	left: 20px;
+	position: absolute;
+	width: 50px;
+	height: 40px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 4px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.hamburger {
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	display: flex;
+	flex-direction: column;
+	width: 40px;
+}
+
+.closeSidePanel {
+	font-size: 2.2rem;
+	font-weight: bold;
+	display: none;
+	cursor: pointer;
+}
+
+.hamburger > div {
+	width: 80%;
+	height: 6px;
+	background: linear-gradient(#f90000, #330001);
+}
+
+.sidePanel :where(.player-one, .player-two) > * {
+	width: 100%;
+}
+
+.sidePanel img {
+	width: 60px;
+	height: 60px;
+	margin-inline: auto;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+img {
+	display: block;
+}
+
+button {
+	border: none;
+}
+
+.score,
+.round {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.sidePanel > div > p,
+.score {
+	display: inline-block;
+}
+.sidePanel > div > p,
+.score,
+.closeSidePanel {
+	background: -webkit-linear-gradient(#f90000, #330001);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+input:focus {
+	outline: 2px solid black;
+}
+
+.containerPlayers { 
+	display: flex;
+	gap: 1rem;
+	width: 80%;
+}
+
+.containerPlayer {
+	display: flex;
+	flex-direction: column;
+}
+
+.player-one,
+.player-two,
+.tic-tac-toe,
+.round {
+	align-items: center;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	padding-block: 0.5em;
+	width: 80%;
+}
+
+.player-one,
+.player-two {
+	display: block;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+.round {
+	font-size: 2.5rem;
+	width: 100%;
+	display: flex;
+}
+
+.round > :first-child {
+	width: 60%;
+}
+
+.round > :last-child {
+	width: 40%;
+}
+
+.namePlayer {
+	font-size: 2rem;
+}
+
+.scoreContainer {
+	width: 100%;
+	text-align: center;
+	border-bottom: 10px solid #ab0000;
+	padding-block-end: 2rem;
+	margin-block-start: 2rem;
+}
+
+.score {
+	font-size: 1.5rem;
+	margin-block-end: 2rem;
+}
+
+.scoreContainer span {
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.gameboard {
+	display: none;
+	grid-template-columns: repeat(3, 100px);
+	grid-auto-rows: 100px;
+	gap: 10px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.playersName .fight {  display: none  }
+
+.playersName > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.playersName h1,
+input,
+.options button,
+[data-winner],
+.gameboard div {
+	background: -webkit-linear-gradient(#f90000, #330001);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.players {
+	display: flex;
+	flex-direction: column;
+	background-color: #f8f8f8;
+	padding: 2em;
+}
+
+.playersName {
+	display: flex;
+	text-align: center;
+	flex-direction: row;
+	gap: 2rem;
+	font-weight: arial sans-serif;
+}
+input {
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 0.2em;
+	border: 1px solid black;
+}
+
+.players img {
+	margin-top: 4rem;
+	font-weight: bold;
+	font-size: 1.6rem;
+	width: 200px;
+	margin-inline: auto;
+}
+
+.versus {
+	align-self: center;
+	font-weight: bold;
+	font-size: 2rem;
+	width: 100px;
+	aspect-ratio: 1;
+	display: block;
+	cursor: default;
+}
+
+.players .fight {
+	cursor: pointer;
+}
+
+.gameboard > div {
+	border: 1px solid black;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.gameboard > div:hover {
+	border: 2px solid #b30003;
+}
+
+.gameboard > div:active {
+	transform: scale(1.1);
+}
+
+.overlay {
+	display: none;
+	flex-direction: column;
+	width: 50%;
+	height: 600px;
+	position: absolute;
+	justify-self: center;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	background-color: #f8f8f8;
+	z-index: 1000;
+}
+
+.container {
+	width: 100%;
+}
+
+.container [data-winner] {
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 2rem;
+	padding: 1em;
+	color: black;
+	font-weight: bold;
+}
+
+.options {
+	display: flex;
+	justify-content: space-around;
+	padding-inline: 2em;
+}
+
+.options button {
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+
+@media (max-width: 75em) {
+
+	.overlay { width: 100%; }
+
+	.players > .fight { display: none; }
+
+	.playersName .fight {  display: block  }
+
+
+	.players img { width: 100px }
+
+	.sidePanel { 
+		width: 100%;
+		position: relative;
+		z-index: 2;
+	}
+
+	.playersName {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		gap: 0;
+	}
+}
